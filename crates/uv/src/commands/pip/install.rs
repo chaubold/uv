@@ -78,6 +78,7 @@ pub(crate) async fn pip_install(
     preview: PreviewMode,
     cache: Cache,
     dry_run: bool,
+    package_list: String,
     printer: Printer,
 ) -> anyhow::Result<ExitStatus> {
     let start = std::time::Instant::now();

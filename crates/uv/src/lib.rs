@@ -495,6 +495,7 @@ async fn run(cli: Cli) -> Result<ExitStatus> {
                 globals.preview,
                 cache,
                 args.dry_run,
+                args.package_list,
                 printer,
             )
             .await

@@ -1517,6 +1517,11 @@ pub struct PipInstallArgs {
     #[arg(long)]
     pub dry_run: bool,
 
+    /// Instead of using a Python environment that is installed, read the list of packages from
+    /// the given file.
+    #[arg(long)]
+    pub package_list: String,
+
     #[command(flatten)]
     pub compat_args: compat::PipInstallCompatArgs,
 }

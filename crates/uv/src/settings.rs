@@ -1138,6 +1138,7 @@ pub(crate) struct PipInstallSettings {
     pub(crate) overrides_from_workspace: Vec<Requirement>,
     pub(crate) refresh: Refresh,
     pub(crate) settings: PipSettings,
+    pub(crate) package_list: String,
 }
 
 impl PipInstallSettings {
@@ -1179,6 +1180,7 @@ impl PipInstallSettings {
             strict,
             no_strict,
             dry_run,
+            package_list,
             compat_args: _,
         } = args;
 
@@ -1256,6 +1258,7 @@ impl PipInstallSettings {
                 },
                 filesystem,
             ),
+            package_list,
         }
     }
 }
