@@ -187,7 +187,15 @@ pub(crate) async fn pip_install(
     let _lock = environment.lock()?;
 
     // Determine the set of installed packages.
-    let site_packages = SitePackages::from_environment(&environment)?;
+    // let site_packages = SitePackages::from_environment(&environment)?;
+
+    let site_packages = {
+        if package_list.is_empty() {
+            SitePackages::from_environment(&environment)?
+        } else {
+            SitePackages::from_package_list(package_list)?
+        }
+    };
 
     // Check if the current environment satisfies the requirements.
     // Ideally, the resolver would be fast enough to let us remove this check. But right now, for large environments,

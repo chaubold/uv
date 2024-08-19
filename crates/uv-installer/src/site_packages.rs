@@ -132,6 +132,10 @@ impl SitePackages {
         })
     }
 
+    pub fn from_package_list(package_list: String) -> Result<Self> {
+        Err(anyhow::anyhow!("Not implemented"))
+    }
+
     /// Returns the [`Interpreter`] used to install the packages.
     pub fn interpreter(&self) -> &Interpreter {
         &self.interpreter
